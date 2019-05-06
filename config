@@ -34,8 +34,8 @@ focus_follows_mouse no
 # Floating stuff
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
-floating_minimum_size 300 x 200
-floating_maximum_size 1366 x 768
+floating_minimum_size 800x600 
+floating_maximum_size 1920x1080
 
 # Workspace names
 
@@ -59,8 +59,6 @@ set $ws9 "❾→ "
 
 # start a terminal
 bindsym $mod+Return exec urxvtc
-# launch categorized menu
-bindsym $mod+z exec --no-startup-id morc_menu
 
 # Moving windows
 bindsym $mod+h move left
@@ -176,16 +174,19 @@ bindsym XF86AudioMicMute exec amixer sset Headphone toggle
 #bindsym XF86AudioPrev exec playerctl previous
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 10  # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 10  # decrease screen brightness
+bindsym XF86MonBrightnessUp exec /usr/bin/light -A 5  # increase screen brightness
+bindsym XF86MonBrightnessDown exec /usr/bin/light -U 5  # decrease screen brightness
 
 # start dmenu (a program launcher) rofi
-bindsym XF86LaunchA exec --no-startup-id rofi -show window
+bindsym XF86LaunchA exec --no-startup-id rofi -show run 
 bindsym XF86Search exec --no-startup-id i3-dmenu-desktop --dmenu='rofi -dmenu'
 bindsym Home exec pcmanfm 
+bindsym XF86Sleep exec xterm 
+bindsym XF86Wakeup exec termite 
 #bindsym Home exec --no-startup-id rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}' 
-bindsym XF86Explorer exec --no-startup-id termite
-
+# launch categorized menu
+# /home/turbo/.local/share/applications desktop 配置目录
+bindsym XF86Explorer exec --no-startup-id morc_menu
 bindsym Print exec deepin-screenshot -s ~/Pictures/scrot
 #bindsym Print exec scrot -u -e 'mv $f ~/Pictures/scrot'
 #bindsym --release $mod+Print exec scrot -s -e 'mv $f ~/Pictures/scrot'
@@ -220,18 +221,17 @@ for_window [window_role="app"] floating enable
 
 for_window [class="Urxvt|XTerm|Termite|XCalc|XFontSel"] floating enable, border none
 for_window [class="Remarkable|shadowsocks-qt5|wicd-client.py|Wicd Network Manager"] floating enable, border none
-for_window [class="Google-chrome|Chromium|jetbrains-idea"] tabbed,stacking,border none
+for_window [class="Google-chrome|Chromium|jetbrains-idea"] border none,tabbed enable,stacking
 for_window [class="Ddd" instance="^(?!command_shell$)"] floating enable
 for_window [class="Min"] focus child, layout stacking, focus
 for_window [class="XClipboard|xpad|Blueman-manager|Lxappearance"] floating enable
 for_window [class="Peek|Cheese|Zeal|Remmina"] floating enable, border none
 for_window [class="feh|Vimiv|MPlayer|gl|mpv"] floating enable, border none
 for_window [class="Terminator"] border none
-for_window [class="Geany"] border none
 for_window [class="Galculator"] floating enable border pixel 1
 
 #cssh
-for_window [class="Cssh"] floating enable
+for_window [class="Cssh|kate|Geany|Mousepad|ReText"] floating enable
 for_window [title="^CLUSTERSSH: .*"] floating enable
 for_window [class="DialogBox"] floating enable
 
@@ -240,10 +240,10 @@ for_window [urgent=latest] focus
 
 # always open some programs on specified workspace
 assign [class="Terminator"]  $ws1
-assign [class="qutebrowser"]  $ws2
+assign [class="qutebrowser|deluge-gtk"]  $ws2
 assign [class="Chromium|Google-chrome"]  $ws3
 #assign [class="Remmina"]  $ws9
-assign [class="TelegramDesktop"] $ws0
+assign [class="TelegramDesktop|youdao-dict"] $ws0
 # }}}
 
 
@@ -343,24 +343,25 @@ bar {
 # }}}
 
 #{{{ auto start
-exec --no-startup-id compton -bcf -i 0.8
+exec --no-startup-id compton -bcf -i 0.95
 exec --no-startup-id /usr/bin/xpad
 exec --no-startup-id /usr/bin/urxvtd -q -f -o
 exec --no-startup-id $SCRIPTDIR/wallpaper &
 exec --no-startup-id xautolock -time 5 -locker $SCRIPTDIR/exit lock &
 exec --no-startup-id volumeicon
 exec --no-startup-id nm-applet
-exec --no-startup-id xfce4-power-manager
 #exec --no-startup-id pamac-tray
 exec --no-startup-id clipit
 #exec --no-startup-id ibus-daemon -xrd 
 exec --no-startup-id /usr/bin/blueman-applet
 exec --no-startup-id /usr/bin/mpd ~/.config/mpd/mpd.conf
+#localectl set-x11-keymap us pc105 ,us caps:ctrl_modifier
 exec --no-startup-id /usr/bin/xmodmap ~/.config/i3/Xmodmaprc
 exec --no-startup-id /usr/bin/terminator --layout=box
 #exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
-exec --no-startup-id "sh -c 'sleep 2; exec urxvtc'"
+exec --no-startup-id "sh -c 'sleep 2; exec urxvtc -e tmux'"
 exec --no-startup-id "sh -c 'sleep 10; exec ss-qt5'"
 exec --no-startup-id "sh -c 'sleep 20; exec qutebrowser'"
+#exec --no-startup-id "sh -c 'sleep 25; exec deluge-gtk'"
 # }}}
