@@ -4,7 +4,7 @@
 ############################################################
 
 function lock {
-    i3lock --ignore-empty-password --show-failed-attempts -e -i $HOME/.config/i3/i3scripts/pictures/rabbit.png
+    i3lock --ignore-empty-password --show-failed-attempts -e -i $HOME/.config/i3/i3scripts/pictures/lock.png
 }
 
 case "$1" in
