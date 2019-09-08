@@ -192,7 +192,7 @@ bindsym --release Print exec deepin-screenshot -s ~/Pictures/scrot
 #bindsym --release $mod+Print exec scrot -s -e 'mv $f ~/Pictures/scrot'
 
 #XF86WLAN
-bindsym XF86Tools exec terminator
+bindsym XF86Tools exec code
 # Enter normal mode
 bindsym Insert mode "normal"
 
@@ -242,7 +242,7 @@ for_window [urgent=latest] focus
 
 # always open some programs on specified workspace
 #assign [class="Terminator|Remmina"]  $ws1
-assign [class="qutebrowser|rage|deluge-gtk|termite"]  $ws2
+assign [class="qutebrowser|rage|deluge-gtk|xterm"]  $ws2
 assign [class="Chromium|Google-chrome"]  $ws3
 assign [class="Code"]  $ws4
 assign [class="jetbrains-idea"]  $ws5
@@ -368,7 +368,7 @@ exec --no-startup-id "sh -c 'sleep 2; exec urxvtc -e tmux'"
 exec --no-startup-id "sh -c 'sleep 10; exec ss-qt5'"
 exec --no-startup-id "sh -c 'sleep 15; exec qutebrowser'"
 exec --no-startup-id "sh -c 'sleep 18; exec orage'"
-exec --no-startup-id "sh -c 'sleep 20; exec termite'"
+exec --no-startup-id "sh -c 'sleep 20; exec xterm'"
 exec --no-startup-id "sh -c 'sleep 25; exec chromium'"
 exec --no-startup-id "sh -c 'sleep 30; exec google-chrome-stable'"
 exec --no-startup-id "sh -c 'sleep 30; exec dolphin'"
