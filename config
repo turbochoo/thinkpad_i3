@@ -174,8 +174,8 @@ bindsym XF86AudioMicMute exec amixer sset Headphone toggle
 #bindsym XF86AudioPrev exec playerctl previous
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec /usr/bin/light -A 5  # increase screen brightness
-bindsym XF86MonBrightnessDown exec /usr/bin/light -U 5  # decrease screen brightness
+bindsym XF86MonBrightnessUp exec "/usr/bin/xbacklight -inc 5;  notify-send 'brightness up'"  # increase screen brightness
+bindsym XF86MonBrightnessDown exec "/usr/bin/xbacklight -dec 5; notify-send 'brightness up'"  # decrease screen brightness
 
 # start dmenu (a program launcher) rofi
 bindsym XF86LaunchA exec --no-startup-id rofi -show run 
@@ -241,8 +241,8 @@ for_window [class="DialogBox"] floating enable
 for_window [urgent=latest] focus
 
 # always open some programs on specified workspace
-#assign [class="Terminator|Remmina|lxterminal"]  $ws1
-assign [class="qutebrowser|rage|deluge-gtk"]  $ws2
+#assign [class="Terminator|Remmina"]  $ws1
+assign [class="qutebrowser|rage|deluge-gtk|termite"]  $ws2
 assign [class="Chromium|Google-chrome"]  $ws3
 assign [class="Code"]  $ws4
 assign [class="jetbrains-idea"]  $ws5
@@ -368,7 +368,7 @@ exec --no-startup-id "sh -c 'sleep 2; exec urxvtc -e tmux'"
 exec --no-startup-id "sh -c 'sleep 10; exec ss-qt5'"
 exec --no-startup-id "sh -c 'sleep 15; exec qutebrowser'"
 exec --no-startup-id "sh -c 'sleep 18; exec orage'"
-exec --no-startup-id "sh -c 'sleep 20; exec lxterminal'"
+exec --no-startup-id "sh -c 'sleep 20; exec termite'"
 exec --no-startup-id "sh -c 'sleep 25; exec chromium'"
 exec --no-startup-id "sh -c 'sleep 30; exec google-chrome-stable'"
 exec --no-startup-id "sh -c 'sleep 30; exec dolphin'"
