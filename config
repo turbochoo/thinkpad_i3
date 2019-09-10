@@ -174,8 +174,8 @@ bindsym XF86AudioMicMute exec amixer sset Headphone toggle
 #bindsym XF86AudioPrev exec playerctl previous
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec "/usr/bin/xbacklight -inc 5;  notify-send 'brightness up'"  # increase screen brightness
-bindsym XF86MonBrightnessDown exec "/usr/bin/xbacklight -dec 5; notify-send 'brightness up'"  # decrease screen brightness
+bindsym XF86MonBrightnessUp exec --no-startup-id $SCRIPTDIR/light.sh up 5  # increase screen brightness
+bindsym XF86MonBrightnessDown exec --no-startup-id $SCRIPTDIR/light.sh down 5  # decrease screen brightness
 
 # start dmenu (a program launcher) rofi
 bindsym XF86LaunchA exec --no-startup-id rofi -show run 
