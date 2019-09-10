@@ -221,7 +221,7 @@ for_window [window_role="menu"] floating enable
 for_window [window_role="About"] floating enable
 for_window [window_role="app"] floating enable
 
-for_window [class="Urxvt|XTerm|Termite|XCalc|XFontSel"] floating enable, border none
+for_window [class="Urxvt|Termite|XCalc|XFontSel"] floating enable, border none
 for_window [class="Remarkable|shadowsocks-qt5|wicd-client.py|Wicd Network Manager"] floating enable, border none
 for_window [class="Google-chrome|Chromium|jetbrains-idea"] border none,tabbed enable,stacking
 for_window [class="Ddd" instance="^(?!command_shell$)"] floating enable
