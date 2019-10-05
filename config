@@ -226,7 +226,7 @@ for_window [class="XClipboard|xpad|Blueman-manager|Lxappearance"] floating enabl
 for_window [class="Peek|Cheese|Zeal|Remmina|Orage|lxterminal"] floating enable, border none
 for_window [class="feh|Vimiv|MPlayer|gl|mpv"] floating enable, border none
 for_window [class="Terminator"] border none
-for_window [class="Galculator"] floating enable border pixel 1
+for_window [class="Galculator|XTerm|tabbed"] floating enable border pixel 1
 
 #cssh
 for_window [class="Cssh|kate|Geany|Mousepad|ReText"] floating enable
@@ -242,8 +242,8 @@ assign [class="qutebrowser|rage|deluge-gtk"]  $ws2
 assign [class="Chromium|Google-chrome"]  $ws3
 assign [class="Code"]  $ws4
 assign [class="jetbrains-idea"]  $ws5
-assign [class="TelegramDesktop|spacefm|dolphin|Navicat.exe"] $ws0
-assign [class="VirtualBox Manager"] $ws9
+assign [class="TelegramDesktop|Spacefm|dolphin"] $ws0
+assign [class="VirtualBox Manager|RSS Guard|Amule|Navicat.exe"] $ws9
 # }}}
 
 
@@ -344,28 +344,30 @@ bar {
 # }}}
 
 #{{{ auto start
-exec --no-startup-id compton -bcf -i 0.95
+exec --no-startup-id /usr/bin/compton -bcf -i 0.95
 exec --no-startup-id /usr/bin/xpad
-exec --no-startup-id /usr/bin/urxvtd -q -f -o
+#exec --no-startup-id /usr/bin/urxvtd -q -f -o
 exec --no-startup-id $SCRIPTDIR/wallpaper &
 exec --no-startup-id xautolock -time 5 -locker $SCRIPTDIR/exit lock &
-exec --no-startup-id volumeicon
+exec --no-startup-id /usr/bin/volumeicon
 exec --no-startup-id nm-applet
-exec --no-startup-id copyq
+exec --no-startup-id /usr/bin/copyq
 #exec --no-startup-id ibus-daemon -xrd
 exec --no-startup-id /usr/bin/blueman-applet
 #exec --no-startup-id /usr/bin/mpd ~/.config/mpd/mpd.conf
 #localectl set-x11-keymap us pc105 ,us caps:ctrl_modifier
 exec --no-startup-id /usr/bin/xmodmap ~/.config/i3/Xmodmaprc
-exec --no-startup-id /usr/bin/terminator --layout=box --new-tab
 #exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
-exec --no-startup-id "sh -c 'sleep 2; exec urxvtc -e tmux'"
+#exec --no-startup-id "sh -c 'sleep 2; exec urxvtc -e tmux'"
+exec --no-startup-id /usr/bin/sterminal
+exec --no-startup-id /usr/bin/terminator --layout=box
+exec --no-startup-id "sh -c 'sleep 1; exec /usr/bin/terminator --layout=box --new-tab'"
 exec --no-startup-id "sh -c 'sleep 10; exec ss-qt5'"
 exec --no-startup-id "sh -c 'sleep 15; exec qutebrowser'"
 exec --no-startup-id "sh -c 'sleep 15; exec orage'"
 exec --no-startup-id "sh -c 'sleep 15; exec rssguard'"
-exec --no-startup-id "sh -c 'sleep 20; exec xterm-tabbled.sh'"
+exec --no-startup-id "sh -c 'sleep 20; exec tilda'"
 exec --no-startup-id "sh -c 'sleep 25; exec chromium'"
 exec --no-startup-id "sh -c 'sleep 30; exec google-chrome-stable'"
 #exec --no-startup-id "sh -c 'sleep 30; exec dolphin'"
