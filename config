@@ -10,7 +10,7 @@ set $SCRIPTDIR $HOME/.config/i3/i3scripts
 
 #Font for window titles
 #font pango:DejaVu Sans Mono 8
-font pango:WenQuanYi Micro Hei Mono 9
+font pango:WenQuanYi Micro Hei Mono 10
 # Window borders
 new_window pixel 1
 new_float normal
@@ -182,7 +182,6 @@ bindsym XF86MonBrightnessDown exec --no-startup-id $SCRIPTDIR/light.sh down 5
 # start dmenu (a program launcher) rofi
 bindsym XF86LaunchA exec --no-startup-id rofi -show run
 bindsym XF86Search exec --no-startup-id i3-dmenu-desktop --dmenu='rofi -dmenu'
-bindsym Home exec spacefm
 bindsym XF86Sleep exec xterm-tabbed.sh
 bindsym XF86Wakeup exec termite
 #bindsym Home exec --no-startup-id rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
@@ -238,7 +237,7 @@ for_window [urgent=latest] focus
 
 # always open some programs on specified workspace
 #assign [class="Terminator|Remmina"]  $ws1
-assign [class="qutebrowser|rage|deluge-gtk|Lxterminal"]  $ws2
+assign [class="qutebrowser|rage|deluge-gtk|Lxterminal|GitKraken"]  $ws2
 assign [class="Chromium|Google-chrome"]  $ws3
 assign [class="Code"]  $ws4
 assign [class="jetbrains-idea"]  $ws5
@@ -346,7 +345,7 @@ bar {
 #{{{ auto start
 exec --no-startup-id /usr/bin/compton -bcf -i 0.95
 exec --no-startup-id /usr/bin/xpad
-#exec --no-startup-id /usr/bin/urxvtd -q -f -o
+exec --no-startup-id /usr/bin/urxvtd -q -f -o
 exec --no-startup-id $SCRIPTDIR/wallpaper &
 exec --no-startup-id xautolock -time 5 -locker $SCRIPTDIR/exit lock &
 exec --no-startup-id /usr/bin/volumeicon
@@ -359,18 +358,22 @@ exec --no-startup-id /usr/bin/blueman-applet
 exec --no-startup-id /usr/bin/xmodmap ~/.config/i3/Xmodmaprc
 #exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
-#exec --no-startup-id "sh -c 'sleep 2; exec urxvtc -e tmux'"
-exec --no-startup-id /usr/bin/sterminal
+exec --no-startup-id "sh -c 'sleep 1; exec libinput-gestures-setup start'"
+exec --no-startup-id "sh -c 'sleep 2; exec urxvtc -e tmux'"
+exec --no-startup-id "sh -c 'sleep 2; exec screenkey'"
+#exec --no-startup-id /usr/bin/sterminal
 exec --no-startup-id /usr/bin/terminator --layout=box
-exec --no-startup-id "sh -c 'sleep 1; exec /usr/bin/terminator --layout=box --new-tab'"
+exec --no-startup-id "sh -c 'sleep 5; exec /usr/bin/terminator --layout=box --new-tab'"
 exec --no-startup-id "sh -c 'sleep 10; exec ss-qt5'"
 exec --no-startup-id "sh -c 'sleep 15; exec qutebrowser'"
 exec --no-startup-id "sh -c 'sleep 15; exec orage'"
 exec --no-startup-id "sh -c 'sleep 15; exec rssguard'"
 exec --no-startup-id "sh -c 'sleep 15; exec amule'"
-exec --no-startup-id "sh -c 'sleep 20; exec lxterminal'"
+exec --no-startup-id "sh -c 'sleep 20; exec gitkraken'"
 exec --no-startup-id "sh -c 'sleep 25; exec chromium'"
-exec --no-startup-id "sh -c 'sleep 30; exec google-chrome-stable'"
-#exec --no-startup-id "sh -c 'sleep 30; exec dolphin'"
 exec --no-startup-id "sh -c 'sleep 25; exec spacefm'"
+exec --no-startup-id "sh -c 'sleep 30; exec google-chrome-stable'"
+exec --no-startup-id "sh -c 'sleep 35; exec virtualbox'"
+#exec --no-startup-id "sh -c 'sleep 30; exec dolphin'"
+
 # }}}

@@ -10,3 +10,6 @@ add Control = Control_L
 keycode 112=Left
 !Next
 keycode 117=Right
+keysym XF86Back = Page_Up
+keysym XF86Forward = Page_Down
+
