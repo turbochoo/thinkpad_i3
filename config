@@ -247,7 +247,7 @@ for_window [urgent=latest] focus
 
 # always open some programs on specified workspace
 #assign [class="Terminator|Remmina"]  $ws1
-assign [class="qutebrowser|rage|deluge-gtk|Lxterminal|GitKraken"]  $ws2
+assign [class="Min|qutebrowser|rage|deluge-gtk|Lxterminal|GitKraken"]  $ws2
 assign [class="Chromium|Google-chrome"]  $ws3
 assign [class="Code"]  $ws4
 assign [class="jetbrains-idea"]  $ws5
@@ -384,6 +384,7 @@ exec --no-startup-id "sh -c 'sleep 25; exec chromium'"
 exec --no-startup-id "sh -c 'sleep 25; exec spacefm'"
 exec --no-startup-id "sh -c 'sleep 30; exec google-chrome-stable'"
 exec --no-startup-id "sh -c 'sleep 35; exec virtualbox'"
+exec --no-startup-id "sh -c 'sleep 35; exec mailspring'"
 #exec --no-startup-id "sh -c 'sleep 30; exec dolphin'"
 
 # }}}
