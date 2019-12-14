@@ -227,16 +227,17 @@ for_window [window_role="About"] floating enable
 for_window [window_role="app"] floating enable
 
 for_window [class="Urxvt|Termite|XCalc|XFontSel"] floating enable, border none
-for_window [class="Remarkable|shadowsocks-qt5|wicd-client.py|Wicd Network Manager|Claws-mail"] floating enable, border none
+for_window [class="Remarkable|shadowsocks-qt5|wicd-client.py|Wicd Network Manager"] floating enable, border none
 for_window [class="Google-chrome|Chromium|jetbrains-idea"] border none,tabbed enable,stacking
 for_window [class="Ddd" instance="^(?!command_shell$)"] floating enable
 for_window [class="Min"] focus child, layout stacking, focus
-for_window [class="XClipboard|xpad|Blueman-manager|Lxappearance"] floating enable
+for_window [class="XClipboard|Blueman-manager|Lxappearance"] floating enable
 for_window [class="Peek|Cheese|Zeal|Remmina|Orage|lxterminal"] floating enable, border none
 for_window [class="feh|Vimiv|MPlayer|gl|mpv"] floating enable, border none
 for_window [class="Terminator"] border none
 for_window [class="Galculator|XTerm|tabbed"] floating enable border pixel 1
 
+for_window [class="Amule|Mailspring|VirtualBox Manager|RSS Guard"] border none,tabbed enable,stacking
 #cssh
 for_window [class="Cssh|kate|Geany|Mousepad|ReText"] floating enable
 for_window [title="^CLUSTERSSH: .*"] floating enable
@@ -250,9 +251,10 @@ for_window [urgent=latest] focus
 assign [class="Min|qutebrowser|rage|deluge-gtk|Lxterminal|GitKraken"]  $ws2
 assign [class="Chromium|Google-chrome"]  $ws3
 assign [class="Code"]  $ws4
+
 assign [class="jetbrains-idea"]  $ws5
 assign [class="TelegramDesktop|Spacefm|dolphin"] $ws0
-assign [class="VirtualBox Manager|RSS Guard|Amule|Navicat.exe"] $ws9
+assign [class="VirtualBox Manager|RSS Guard|Amule|Mailspring|Navicat.exe"] $ws9
 # }}}
 
 
@@ -354,7 +356,6 @@ bar {
 
 #{{{ auto start
 exec --no-startup-id /usr/bin/compton -bcf -i 0.95
-exec --no-startup-id /usr/bin/xpad
 exec --no-startup-id /usr/bin/urxvtd -q -f -o
 exec --no-startup-id $SCRIPTDIR/wallpaper &
 exec --no-startup-id xautolock -time 5 -locker $SCRIPTDIR/exit lock &
@@ -371,20 +372,20 @@ exec_always --no-startup-id fix_xcursor
 exec --no-startup-id "sh -c 'sleep 1; exec libinput-gestures-setup start'"
 exec --no-startup-id "sh -c 'sleep 2; exec urxvtc -e tmux'"
 #exec --no-startup-id "sh -c 'sleep 2; exec screenkey'"
-#exec --no-startup-id /usr/bin/sterminal
 exec --no-startup-id /usr/bin/terminator --layout=box
 exec --no-startup-id "sh -c 'sleep 5; exec /usr/bin/terminator --layout=box --new-tab'"
 exec --no-startup-id "sh -c 'sleep 10; exec ss-qt5'"
 exec --no-startup-id "sh -c 'sleep 15; exec qutebrowser'"
-exec --no-startup-id "sh -c 'sleep 15; exec orage'"
 exec --no-startup-id "sh -c 'sleep 15; exec rssguard'"
-#exec --no-startup-id "sh -c 'sleep 15; exec amule'"
 exec --no-startup-id "sh -c 'sleep 20; exec gitkraken'"
-exec --no-startup-id "sh -c 'sleep 25; exec chromium'"
+exec --no-startup-id "sh -c 'sleep 25; exec amule'"
 exec --no-startup-id "sh -c 'sleep 25; exec spacefm'"
-exec --no-startup-id "sh -c 'sleep 30; exec google-chrome-stable'"
-exec --no-startup-id "sh -c 'sleep 35; exec virtualbox'"
-exec --no-startup-id "sh -c 'sleep 35; exec mailspring'"
+exec --no-startup-id "sh -c 'sleep 25; exec virtualbox'"
+exec --no-startup-id "sh -c 'sleep 25; exec mailspring'"
+
 #exec --no-startup-id "sh -c 'sleep 30; exec dolphin'"
+
+exec --no-startup-id "sh -c 'sleep 35; exec chromium'"
+exec --no-startup-id "sh -c 'sleep 35; exec google-chrome-stable'"
 
 # }}}
