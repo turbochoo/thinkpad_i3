@@ -237,9 +237,9 @@ for_window [class="feh|Vimiv|MPlayer|gl|mpv"] floating enable, border none
 for_window [class="Terminator"] border none
 for_window [class="Galculator|XTerm|tabbed"] floating enable border pixel 1
 
-for_window [class="Amule|Mailspring|VirtualBox Manager|RSS Guard"] border none,tabbed enable,stacking
+for_window [class="Amule|Zotero|Mailspring|VirtualBox Manager|RSS Guard"] border none,tabbed enable,stacking
 #cssh
-for_window [class="Cssh|kate|Geany|Mousepad|ReText"] floating enable
+for_window [class="Cssh|kate|Mousepad|ReText"] floating enable
 for_window [title="^CLUSTERSSH: .*"] floating enable
 for_window [class="DialogBox"] floating enable
 
@@ -254,7 +254,7 @@ assign [class="Code"]  $ws4
 
 assign [class="jetbrains-idea"]  $ws5
 assign [class="TelegramDesktop|Spacefm|dolphin"] $ws0
-assign [class="VirtualBox Manager|RSS Guard|Amule|Mailspring|Navicat.exe"] $ws9
+assign [class="VirtualBox Manager|RSS Guard|Amule|Zotero|Mailspring|Navicat.exe"] $ws9
 # }}}
 
 
@@ -382,6 +382,7 @@ exec --no-startup-id "sh -c 'sleep 25; exec amule'"
 exec --no-startup-id "sh -c 'sleep 25; exec spacefm'"
 exec --no-startup-id "sh -c 'sleep 25; exec virtualbox'"
 exec --no-startup-id "sh -c 'sleep 25; exec mailspring'"
+exec --no-startup-id "sh -c 'sleep 25; exec zotero'"
 
 #exec --no-startup-id "sh -c 'sleep 30; exec dolphin'"
 
