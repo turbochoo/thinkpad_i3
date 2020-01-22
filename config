@@ -230,12 +230,12 @@ for_window [class="Urxvt|Termite|XCalc|XFontSel"] floating enable, border none
 for_window [class="Remarkable|shadowsocks-qt5|wicd-client.py|Wicd Network Manager"] floating enable, border none
 for_window [class="Google-chrome|Chromium|jetbrains-idea"] border none,tabbed enable,stacking
 for_window [class="Ddd" instance="^(?!command_shell$)"] floating enable
-for_window [class="Min"] focus child, layout stacking, focus
+for_window [class="Min"] focus child, layout split, focus
 for_window [class="XClipboard|Blueman-manager|Lxappearance"] floating enable
 for_window [class="Peek|Cheese|Zeal|Remmina|Orage|lxterminal"] floating enable, border none
-for_window [class="feh|Vimiv|MPlayer|gl|mpv"] floating enable, border none
+for_window [class="feh|xpad|Vimiv|MPlayer|gl|mpv"] floating enable, border none
 for_window [class="Terminator"] border none
-for_window [class="Galculator|XTerm|tabbed"] floating enable border pixel 1
+for_window [class="Galculator|XTerm|tabbed|Osmo|Hexchat"] floating enable border pixel 1
 
 for_window [class="Amule|Zotero|Mailspring|VirtualBox Manager|RSS Guard"] border none,tabbed enable,stacking
 #cssh
@@ -374,19 +374,22 @@ exec --no-startup-id "sh -c 'sleep 2; exec urxvtc -e tmux'"
 #exec --no-startup-id "sh -c 'sleep 2; exec screenkey'"
 exec --no-startup-id /usr/bin/terminator --layout=box
 exec --no-startup-id "sh -c 'sleep 5; exec /usr/bin/terminator --layout=box --new-tab'"
+exec --no-startup-id "sh -c 'sleep 10; exec xpad'"
 exec --no-startup-id "sh -c 'sleep 10; exec ss-qt5'"
 exec --no-startup-id "sh -c 'sleep 15; exec qutebrowser'"
 exec --no-startup-id "sh -c 'sleep 15; exec rssguard'"
 exec --no-startup-id "sh -c 'sleep 20; exec gitkraken'"
-exec --no-startup-id "sh -c 'sleep 25; exec amule'"
+#exec --no-startup-id "sh -c 'sleep 25; exec amule'"
 exec --no-startup-id "sh -c 'sleep 25; exec spacefm'"
 exec --no-startup-id "sh -c 'sleep 25; exec virtualbox'"
 exec --no-startup-id "sh -c 'sleep 25; exec mailspring'"
+exec --no-startup-id "sh -c 'sleep 25; exec osmo'"
+exec --no-startup-id "sh -c 'sleep 25; exec hexchat'"
 exec --no-startup-id "sh -c 'sleep 25; exec zotero'"
 
 #exec --no-startup-id "sh -c 'sleep 30; exec dolphin'"
 
 exec --no-startup-id "sh -c 'sleep 35; exec chromium'"
-exec --no-startup-id "sh -c 'sleep 35; exec google-chrome-stable'"
+exec --no-startup-id "sh -c 'sleep 45; exec google-chrome-stable'"
 
 # }}}
