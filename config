@@ -230,12 +230,12 @@ for_window [class="Urxvt|Termite|XCalc|XFontSel"] floating enable, border none
 for_window [class="Remarkable|shadowsocks-qt5|wicd-client.py|Wicd Network Manager"] floating enable, border none
 for_window [class="Google-chrome|Chromium|jetbrains-idea"] border none,tabbed enable,stacking
 for_window [class="Ddd" instance="^(?!command_shell$)"] floating enable
-for_window [class="Min"] focus child, layout split, focus
+#for_window [class=""] focus child, layout split, focus
 for_window [class="XClipboard|Blueman-manager|Lxappearance|Netease-cloud-music-gtk"] floating enable
 for_window [class="Peek|Cheese|Zeal|Remmina|Evince|Typora"] floating enable, border none
 for_window [class="feh|xpad|Vimiv|Clementine|gl|mpv"] floating enable, border none
 for_window [class="Terminator"] border none
-for_window [class="Galculator|XTerm|tabbed|Osmo|Hexchat"] floating enable border pixel 1
+for_window [class="Galculator|XTerm|tabbed|Osmo|Hexchat|Min"] floating enable border pixel 1
 
 for_window [class="Org.gnome.Nautilus|Zotero|Mailspring|VirtualBox Manager|RSS Guard"] border none,tabbed enable,stacking
 #cssh
@@ -248,7 +248,7 @@ for_window [urgent=latest] focus
 
 # always open some programs on specified workspace
 #assign [class="Terminator|Remmina"]  $ws1
-assign [class="Min|qutebrowser|rage|Org.gnome.Nautilus|GitKraken"]  $ws2
+assign [class="qutebrowser|rage|Org.gnome.Nautilus|GitKraken"]  $ws2
 assign [class="Chromium|Google-chrome"]  $ws3
 assign [class="Code"]  $ws4
 
