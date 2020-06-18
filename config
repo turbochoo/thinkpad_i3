@@ -188,16 +188,19 @@ bindsym XF86AudioMicMute exec "amixer -c 0 -D pulse set Capture toggle"
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec --no-startup-id $SCRIPTDIR/light.sh up 5
 bindsym XF86MonBrightnessDown exec --no-startup-id $SCRIPTDIR/light.sh down 5
-
+# XF86HomePage XF86Mail XF86Favorites XF86Calculator
 # start dmenu (a program launcher) rofi
-bindsym XF86LaunchA exec --no-startup-id rofi -show run
-bindsym XF86Search exec --no-startup-id i3-dmenu-desktop --dmenu='rofi -dmenu'
-bindsym XF86Sleep exec xterm-tabbed.sh
+#bindsym XF86LaunchA exec --no-startup-id rofi -show run
+#bindsym XF86Search exec --no-startup-id i3-dmenu-desktop --dmenu='rofi -dmenu'
+bindsym XF86Explorer exec --no-startup-id i3-dmenu-desktop --dmenu='rofi -dmenu'
+bindsym XF86Calculator exec --no-startup-id rofi -show run
+
+#bindsym XF86Sleep exec xterm-tabbed.sh
 bindsym XF86Wakeup exec termite
 #bindsym Home exec --no-startup-id rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
 # launch categorized menu
 # /home/turbo/.local/share/applications desktop 配置目录
-bindsym XF86Explorer exec --no-startup-id morc_menu
+bindsym XF86Search exec --no-startup-id morc_menu
 bindsym --release Print exec deepin-screenshot -s ~/Pictures/scrot
 #bindsym Print exec scrot -u -e 'mv $f ~/Pictures/scrot'
 #bindsym --release $mod+Print exec scrot -s -e 'mv $f ~/Pictures/scrot'
@@ -230,12 +233,12 @@ for_window [class="Urxvt|Termite|XCalc|XFontSel"] floating enable, border none
 for_window [class="Remarkable|shadowsocks-qt5|wicd-client.py|Wicd Network Manager"] floating enable, border none
 for_window [class="Google-chrome|Chromium|jetbrains-idea"] border none,tabbed enable,stacking
 for_window [class="Ddd" instance="^(?!command_shell$)"] floating enable
-for_window [class="Min"] focus child, layout split, focus
+#for_window [class=""] focus child, layout split, focus
 for_window [class="XClipboard|Blueman-manager|Lxappearance|Netease-cloud-music-gtk"] floating enable
 for_window [class="Peek|Cheese|Zeal|Remmina|Evince|Typora"] floating enable, border none
-for_window [class="feh|xpad|Vimiv|Clementine|gl|mpv"] floating enable, border none
+for_window [class="feh|xpad|Vimiv|Clementine|gl|mpv|xev"] floating enable, border none
 for_window [class="Terminator"] border none
-for_window [class="Galculator|XTerm|tabbed|Osmo|Hexchat"] floating enable border pixel 1
+for_window [class="Galculator|XTerm|tabbed|Osmo|Hexchat|Min"] floating enable border pixel 1
 
 for_window [class="Org.gnome.Nautilus|Zotero|Mailspring|VirtualBox Manager|RSS Guard"] border none,tabbed enable,stacking
 #cssh
@@ -248,7 +251,7 @@ for_window [urgent=latest] focus
 
 # always open some programs on specified workspace
 #assign [class="Terminator|Remmina"]  $ws1
-assign [class="Min|qutebrowser|rage|Org.gnome.Nautilus|GitKraken"]  $ws2
+assign [class="qutebrowser|rage|Org.gnome.Nautilus|GitKraken"]  $ws2
 assign [class="Chromium|Google-chrome"]  $ws3
 assign [class="Code"]  $ws4
 
@@ -384,8 +387,8 @@ exec --no-startup-id "sh -c 'sleep 20; exec pcmanfm'"
 exec --no-startup-id "sh -c 'sleep 25; exec virtualbox'"
 #exec --no-startup-id "sh -c 'sleep 25; exec rssguard'"
 #exec --no-startup-id "sh -c 'sleep 25; exec mailspring'"
-exec --no-startup-id "sh -c 'sleep 25; exec transmission-gtk'"
-exec --no-startup-id "sh -c 'sleep 25; exec amule'"
+#exec --no-startup-id "sh -c 'sleep 25; exec transmission-gtk'"
+#exec --no-startup-id "sh -c 'sleep 25; exec amule'"
 exec --no-startup-id "sh -c 'sleep 25; exec osmo'"
 exec --no-startup-id "sh -c 'sleep 25; exec zotero'"
 
