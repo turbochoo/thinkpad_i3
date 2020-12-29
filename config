@@ -345,6 +345,7 @@ mode "$mode_caps" {
 bar {
     position bottom
 	  tray_output primary
+    output eDP1
     status_command i3blocks -c $HOME/.config/i3/i3blocks.conf
     #status_command i3status
     font pango: Sauce Code Pro Nerd Font Mono 8
