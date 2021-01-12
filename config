@@ -232,9 +232,9 @@ for_window [window_role="menu"] floating enable
 for_window [window_role="About"] floating enable
 for_window [window_role="app"] floating enable
 
-for_window [class="Urxvt|Termite|XCalc|XFontSel"] floating enable, border none
-for_window [class="Remarkable|V2Ray-Desktop|shadowsocks-qt5|wicd-client.py|Wicd Network Manager"] floating enable, border none
-for_window [class="Google-chrome|Chromium|jetbrains-idea"] border none,tabbed enable,stacking
+for_window [class="Urxvt|Termite|XCalc|XFontSel|Navicat.exe"] floating enable, border none
+for_window [class="Remarkable|V2Ray-Desktop|draw.io|wicd-client.py|Wicd Network Manager"] floating enable, border none
+for_window [class="Google-chrome|Chromium|jetbrains-idea"] border none,tabbed enable
 for_window [class="Ddd" instance="^(?!command_shell$)"] floating enable
 #for_window [class=""] focus child, layout split, focus
 for_window [class="XClipboard|Blueman-manager|Lxappearance|Netease-cloud-music-gtk"] floating enable
@@ -255,7 +255,7 @@ for_window [urgent=latest] focus
 # always open some programs on specified workspace
 #assign [class="Terminator|Remmina"]  $ws1
 assign [class="qutebrowser|rage|Org.gnome.Nautilus|GitKraken"]  $ws2
-assign [class="Chromium|Google-chrome"]  $ws3
+assign [class="Chromium|Google-chrome" window_role="browser"]  $ws3
 assign [class="Code"]  $ws4
 
 assign [class="jetbrains-idea"]  $ws5
@@ -345,7 +345,7 @@ mode "$mode_caps" {
 bar {
     position bottom
 	  tray_output primary
-    output eDP1
+    #output eDP1
     status_command i3blocks -c $HOME/.config/i3/i3blocks.conf
     #status_command i3status
     font pango: Sauce Code Pro Nerd Font Mono 8
@@ -377,7 +377,7 @@ exec --no-startup-id /usr/bin/xmodmap ~/.config/i3/Xmodmaprc
 #exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 exec --no-startup-id "sh -c 'sleep 1; exec libinput-gestures-setup start'"
-exec --no-startup-id "sh -c 'sleep 2; exec urxvtc -e tmux'"
+exec --no-startup-id "sh -c 'sleep 2; exec urxvtc -e ~/utils/tmuxv.sh'"
 #exec --no-startup-id "sh -c 'sleep 2; exec screenkey'"
 exec --no-startup-id /usr/bin/terminator --layout=box
 exec --no-startup-id "sh -c 'sleep 5; exec /usr/bin/terminator --layout=box --new-tab'"
