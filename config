@@ -233,7 +233,7 @@ for_window [window_role="About"] floating enable
 for_window [window_role="app"] floating enable
 
 for_window [class="Urxvt|Termite|XCalc|XFontSel|Navicat.exe"] floating enable, border none
-for_window [class="Remarkable|V2Ray-Desktop|draw.io|wicd-client.py|Wicd Network Manager"] floating enable, border none
+for_window [class="etherwall|telegram-desktop|V2Ray-Desktop|draw.io|wicd-client.py|Wicd Network Manager"] floating enable, border none
 for_window [class="Google-chrome|Chromium|jetbrains-idea"] border none,tabbed enable
 for_window [class="Ddd" instance="^(?!command_shell$)"] floating enable
 #for_window [class=""] focus child, layout split, focus
@@ -259,7 +259,7 @@ assign [class="Chromium|Google-chrome" window_role="browser"]  $ws3
 assign [class="Code"]  $ws4
 
 assign [class="jetbrains-idea"]  $ws5
-assign [class="TelegramDesktop|Pcmanfm"] $ws0
+assign [class="telegram-desktop|Pcmanfm"] $ws0
 assign [class="VirtualBox Manager|RSS Guard|Zotero|Mailspring|Navicat.exe"] $ws9
 # }}}
 
