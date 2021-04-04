@@ -260,7 +260,7 @@ assign [class="Code"]  $ws4
 
 assign [class="jetbrains-idea"]  $ws5
 assign [class="telegram-desktop|Pcmanfm"] $ws0
-assign [class="VirtualBox Manager|RSS Guard|Zotero|Mailspring|Navicat.exe"] $ws9
+assign [class="VirtualBox Manager|RSS Guard|Zotero|Mailspring"] $ws9
 # }}}
 
 
